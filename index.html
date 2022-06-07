@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .title {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contador-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contador {
+            width: 200px;
+            height: 100px;
+            background-color: aquamarine;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin: auto;
+            border-radius: 15px;
+        }
+
+        .botones-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;        
+        }
+
+
+    </style>
+
+    <div class="title">
+        <p><h1>CONTADOR</h1></p>   
+    </div>
+
+    <div class="main-container">
+        <div class="contador-container">
+            <div class="contador" id="contador" value="">
+                0
+            </div>
+        </div>
+        <div class="botones-container">
+            <div class="botones">
+                <button onclick="sumar()">SUMAR</button>
+                <button onclick="restar()">RESTAR</button>
+                <button onclick="resetear()">RESETEAR</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var divContador = document.querySelector("#contador")
+
+
+        var resultado = 0;
+
+        function sumar() {
+            resultado++;
+            divContador.innerHTML = resultado;
+        }
+
+        function restar() {
+            // if (resultado != 0) {
+            //     resultado--;
+            //     divContador.innerHTML = resultado;
+            // }
+            resultado != 0 ? resultado-- : resultado;
+            divContador.innerHTML = resultado;
+            console.log(resultado);
+        }
+
+        const resetear = () => {
+            resultado = 0;
+            divContador.innerHTML = resultado;
+        }
+
+
+    </script>
+
+</body>
+
+</html>
